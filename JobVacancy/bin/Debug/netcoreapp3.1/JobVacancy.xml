@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JobVacancy</name>
+    </assembly>
+    <members>
+        <member name="M:JobVacancy.Controllers.DepartmentController.GetDepartments">
+            <summary>
+            This GET method returns all the available departments
+            </summary>
+        </member>
+        <member name="M:JobVacancy.Controllers.DepartmentController.CreateDepartments(JobVacancy.Models.DepartmentRequest)">
+            <summary>
+            This POST method creates departments
+            </summary>
+        </member>
+        <member name="M:JobVacancy.Controllers.DepartmentController.UpdateDepartments(JobVacancy.Models.DepartmentRequest)">
+            <summary>
+            This PUT method updates specific department based on Id
+            </summary>
+        </member>
+        <member name="M:JobVacancy.Controllers.JobController.GetJobs(JobVacancy.Models.JobDataRequest)">
+            <summary>
+            This POST method returns requested jobs
+            </summary>
+        </member>
+        <member name="M:JobVacancy.Controllers.JobController.GetSpecificJob(System.Int32)">
+            <summary>
+            This GET method returns job based on specific Id
+            </summary>
+        </member>
+        <member name="M:JobVacancy.Controllers.JobController.CreateJobs(JobVacancy.Models.JobsRequest)">
+            <summary>
+            This POST method create jobs
+            </summary>
+        </member>
+        <member name="M:JobVacancy.Controllers.JobController.UpdateJobs(JobVacancy.Models.JobsRequest)">
+            <summary>
+            This PUT method updates specific job based on Id
+            </summary>
+        </member>
+        <member name="M:JobVacancy.Controllers.LocationController.GetDepartments">
+            <summary>
+            This GET method returns all the available locations
+            </summary>
+        </member>
+        <member name="M:JobVacancy.Controllers.LocationController.CreateDepartments(JobVacancy.Models.LocationRequest)">
+            <summary>
+            This POST method creates locations
+            </summary>
+        </member>
+        <member name="M:JobVacancy.Controllers.LocationController.UpdateDepartments(JobVacancy.Models.LocationRequest)">
+            <summary>
+            This PUT method updates specific location based on Id
+            </summary>
+        </member>
+        <member name="P:JobVacancy.Models.DepartmentRequest.Id">
+            <summary>
+            Department Id
+            </summary>
+        </member>
+        <member name="P:JobVacancy.Models.DepartmentRequest.Title">
+            <summary>
+            Job Department Title
+            </summary>
+        </member>
+        <member name="P:JobVacancy.Models.JobDataRequest.q">
+            <summary>
+            Search string based on job title
+            </summary>
+        </member>
+        <member name="P:JobVacancy.Models.JobDataRequest.pageNo">
+            <summary>
+            Page Number
+            </summary>
+        </member>
+        <member name="P:JobVacancy.Models.JobDataRequest.pageSize">
+            <summary>
+            Page Size
+            </summary>
+        </member>
+        <member name="P:JobVacancy.Models.JobDataRequest.LocationId">
+            <summary>
+            Job Location Id
+            </summary>
+        </member>
+        <member name="P:JobVacancy.Models.JobDataRequest.DepartmentId">
+            <summary>
+            Job Department Id
+            </summary>
+        </member>
+        <member name="P:JobVacancy.Models.JobsRequest.Id">
+            <summary>
+            Job Id
+            </summary>
+        </member>
+        <member name="P:JobVacancy.Models.JobsRequest.Title">
+            <summary>
+            Job Title
+            </summary>
+        </member>
+        <member name="P:JobVacancy.Models.JobsRequest.Description">
+            <summary>
+            Job Description
+            </summary>
+        </member>
+        <member name="P:JobVacancy.Models.JobsRequest.DepartmentId">
+            <summary>
+            Job Department Id
+            </summary>
+        </member>
+        <member name="P:JobVacancy.Models.JobsRequest.LocationId">
+            <summary>
+            Job Location Id
+            </summary>
+        </member>
+        <member name="P:JobVacancy.Models.JobsRequest.ClosingDate">
+            <summary>
+            Job Closing Date
+            </summary>
+        </member>
+        <member name="P:JobVacancy.Models.LocationRequest.Id">
+            <summary>
+            Job Location Id
+            </summary>
+        </member>
+        <member name="P:JobVacancy.Models.LocationRequest.Title">
+            <summary>
+            Job Location
+            </summary>
+        </member>
+        <member name="P:JobVacancy.Models.LocationRequest.City">
+            <summary>
+            City in which job is avaiable
+            </summary>
+        </member>
+        <member name="P:JobVacancy.Models.LocationRequest.State">
+            <summary>
+            Job Id
+            </summary>
+        </member>
+        <member name="P:JobVacancy.Models.LocationRequest.Country">
+            <summary>
+            State in which job is avaiable
+            </summary>
+        </member>
+        <member name="P:JobVacancy.Models.LocationRequest.Zip">
+            <summary>
+            Country in which job is avaiable
+            </summary>
+        </member>
+    </members>
+</doc>
