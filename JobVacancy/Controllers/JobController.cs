@@ -27,20 +27,42 @@ namespace JobVacancy.Controllers
         {
             try
             {
-                var job = (from j in _dbContext.Jobs
+                var getJobs = (from j in _dbContext.Jobs
                            join d in _dbContext.Department on j.DepartmentId equals d.Id
                            join l in _dbContext.Location on j.LocationId equals l.Id
-                           where EF.Functions.Like(j.Title, "%" + request.q + "%") && ((j.DepartmentId != 0 && j.DepartmentId == request.DepartmentId) || (j.LocationId != 0 && j.LocationId == request.LocationId))
-                           select new 
+                           where EF.Functions.Like(j.Title, "%" + request.q + "%")
+                           select new
                            {
-                            Id = j.Id,
-                            Code = j.Code,
-                            Title=j.Title,
-                            Department=d.Title,
-                            Location=l.Title,
-                            PostedDate = j.PostedDate,
-                            ClosingDate = j.ClosingDate
-                           }).ToList();
+                               Id = j.Id,
+                               Code = j.Code,
+                               Title = j.Title,
+                               DepartmentId = j.DepartmentId,
+                               LocationId = j.LocationId,
+                               Department = d.Title,
+                               Location = l.Title,
+                               PostedDate = j.PostedDate,
+                               ClosingDate = j.ClosingDate
+                           });
+
+                if (request.DepartmentId !=0)
+                {
+                    getJobs = getJobs.Where(x => x.DepartmentId == request.DepartmentId);
+                }
+                if (request.LocationId != 0)
+                {
+                    getJobs = getJobs.Where(x => x.LocationId == request.LocationId);
+                }
+
+                var job = getJobs.Select(u => new
+                {
+                    Id = u.Id,
+                    Code = u.Code,
+                    Title = u.Title,
+                    Department = u.Title,
+                    Location = u.Title,
+                    PostedDate = u.PostedDate,
+                    ClosingDate = u.ClosingDate
+                }).ToList();
 
                 dynamic Jobs = new ExpandoObject();
                 Jobs.Total = job.Count();
